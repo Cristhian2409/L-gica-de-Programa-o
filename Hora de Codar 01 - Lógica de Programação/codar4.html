@@ -1,0 +1,85 @@
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+       <meta charset="UTF-8">
+       <meta name="viewport" content="width=device-width, initial-scale=1.0">
+       <title>Hora de Codar 01</title>
+ </head>
+ <body>
+       <script>
+
+              var base;
+              var altura;
+              var area;     
+              var diagonal_maior;
+              var diagonal_menor;
+              var base_maior;
+              var base_menor;
+              var raio;
+
+
+              alert("Cálculo de Áreas");
+              switch (prompt("Escolha a forma geométrica:\n 1- Retángulo\n 2- Quadrado\n 3- Losango\n 4- Trapézio\n 5- Paralelogramo\n 6- Triângulo\n 7- Círculo"))
+              {
+                     case "1":
+                            // Área do Retângulo
+                            base = parseFloat(prompt("Digite a base do retãngulo:"));
+                            altura = parseFloat(prompt("Digite a altura do retângulo:"));
+                            area = base * altura;
+                            alert("A Área do retângulo é: " + area);
+                            break;
+
+                     case "2":
+                            // Área do Quadrado
+                            base = parseFloat(prompt("Digite a base do quadrado:"));
+                            area = base * base;
+                            alert("A Área do quadrado é: " + area + "m²");
+                            break;
+
+                     case "3":
+                            // Área do Losango
+                            diagonal_maior = parseFloat(prompt("Digite a diagonal Maior do losango:"));
+                            diagonal_menor = parseFloat(prompt("Digite a diagonal Menor do losango:"));
+                            area = (diagona_maior*diagonal_menor) / 2;
+                            alert("A Área do losango é: " + area + "m²");
+                            break;
+
+                     case "4":
+                            // Aréa do Trapézio
+                            base_maior = parseFloat(prompt("Digite a base Maior do trapézio:"));
+                            base_menor = parseFloat(prompt("Digite a base Menor do trapézio:"));
+                            altura = parseFloat(prompt("Digite a altura do trapézio:"));
+                            area = ((base_maior + base_menor) * altura) / 2;
+                            alert("A Área do trapézio é: " + area + "m²");
+                            break;
+
+                     case "5":
+                            // Área do Paralelogramo
+                            base = parseFloat(prompt("Digite a base do paralelogramo:"));
+                            altura = parseFloat(prompt("Digite a altura do paralelogramo:"));
+                            area = base * altura;
+                            alert("A Área do paralelogramo é: " + area + "m²");
+                            break;
+
+                     case "6":
+                            // Área do Triângulo
+                            base = parseFloat(prompt("Digite a base do triângulo:"));
+                            altura = parseFloat(prompt("Digite a altura do triângulo:"));
+                            area = (base * altura) / 2;
+                            alert("A Área do triângulo é: " + area + "m²");
+                            break;
+
+                     case "7":
+                            // Área do Círculo
+                            raio = parseFloat(prompt("Digite o raio do círculo:"));
+                            area = 3.14 * (raio * raio);
+                            alert("A Área do círculo é: " + area + "m²");
+                            break;
+
+                     default:
+                            alert("Opção inválida");
+              }
+       </script>
+ </body>
+ </html>
+
