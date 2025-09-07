@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Codar 6</title>
+</head>
+<body>
+    <script>
+
+        // 6. Faça um programa que receba quatro valores informados pelo usuário, mas informe somente o primeiro, o último e o maior de todos eles (considere que todos os números informados serão diferentes)
+
+        var valorUm = parseInt(prompt("Digite o primeiro valor: "));
+        var valorDois = parseInt(prompt("Digite o segundo valor: "));
+        var valorTres = parseInt(prompt("Digite o terceiro valor: "));
+        var valorQuatro = parseInt(prompt("Digite o quarto valor: "));
+        var valorMaior;
+
+        if (valorUm > valorDois && valorUm > valorTres && valorUm > valorQuatro){
+            valorMaior = valorUm;
+            alert("Primeiro Valor: " + valorUm + "\nÚltimo Valor: " + valorQuatro + "\nMaior que todos: " + valorMaior);
+        }else if (valorDois > valorUm && valorDois > valorTres && valorDois > valorQuatro){
+            valorMaior = valorDois;
+            alert("Primeiro Valor: " + valorUm + "\nÚltimo Valor: " + valorQuatro + "\nMaior que todos: " + valorMaior);
+        }else if (valorTres > valorUm && valorTres > valorDois && valorTres > valorQuatro){
+            valorMaior = valorTres;
+            alert("Primeiro Valor: " + valorUm + "\nÚltimo Valor: " + valorQuatro + "\nMaior que todos: " + valorMaior);
+        }else if (valorQuatro > valorUm && valorQuatro > valorDois && valorQuatro > valorTres){
+            valorMaior = valorQuatro;
+            alert("Primeiro Valor: " + valorUm + "\nÚltimo Valor: " + valorQuatro + "\nMaior que todos: " + valorMaior);
+        }else{
+            alert("Digite números distintos!");
+        }
+    </script>
+</body>
+</html>

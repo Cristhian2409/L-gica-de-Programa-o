@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Codar 4</title>
+</head>
+<body>
+    <script>
+
+        // 4. Faça um programa que leia 3 valores informados pelo usuário (considere que não serão informados valores iguais) e escrever a soma dos 2 maiores.
+
+        var a = parseInt(prompt("Digite o 1° valor:"));
+        var b = parseInt(prompt("Digite o 2° valor:"));
+        var c = parseInt(prompt("Digite o 3° valor:"));
+        var soma;
+
+        if(a < b && a < c){
+            soma = b + c;
+            alert("A soma dos dois maiores é: " + soma);
+        }else if (b < a && b < c){
+            soma = a + c;
+            alert("A soma dos dois maiores é: " + soma);
+        }else if (c < a && c < b){
+            soma = a + b;
+            alert("A soma dos dois maiores é: " + soma);
+        }else{
+            alert("Coloque números diferentes");
+        }
+
+    </script>
+</body>
+</html>

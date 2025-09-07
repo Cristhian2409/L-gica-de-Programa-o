@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Codar 10</title>
+</head>
+<body>
+    <script>
+
+        // 10. Tendo como entrada a altura e o gênero designado ao nascer (codificado da seguinte forma: 1: feminino - 2: masculino - ) de uma pessoa, construa um programa que calcule e imprima seu peso ideal, utilizando as seguintes fórmulas.
+
+        var altura = parseFloat(prompt("Digite a sua altura atual: "));
+        var genero = prompt("Escolha o seu genero sendo:\n1: Feminino\n2: Masculino");
+        var calculo;
+
+        if(genero == 1){
+            calculo = (62.1 * altura) - 44.7;
+            alert("Peso Ideal: " + calculo);
+        }else if(genero == 2){
+            calculo = (72.2 * altura) - 58;
+            alert("Peso Ideal: " + calculo);
+        }else{
+            alert("O Gênero não existe!");
+        }
+    </script>
+</body>
+</html>

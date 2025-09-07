@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Codar 7</title>
+</head>
+<body>
+    <script>
+
+        // 7. Faça um programa que leia 6 números que o usuário vai informar. Todos os números lidos com valor inferior a 72 devem ser somados. Escreva o valor final da soma efetuada e também todos valores que o usuário informou.  
+
+        var valorPrimeiro = parseInt(prompt("Digite o primeiro valor: "));
+        var valorSegundo = parseInt(prompt("Digite o segundo valor: "));
+        var valorTerceiro = parseInt(prompt("Digite o terceiro valor: "));
+        var valorQuarto = parseInt(prompt("Digite o quarto valor: "));
+        var valorQuinto = parseInt(prompt("Digite o quinto valor: "));
+        var valorSexto = parseInt(prompt("Digite o sexto valor: "));
+
+        var valorSomado = 0;
+
+        if(valorPrimeiro < 72){
+            valorSomado += valorPrimeiro;
+        }
+        if(valorSegundo < 72){
+            valorSomado += valorSegundo;
+        }
+        if(valorTerceiro < 72){
+            valorSomado += valorTerceiro;
+        }
+        if(valorQuarto < 72){
+            valorSomado += valorQuarto;
+        }
+        if(valorQuinto < 72){
+            valorSomado += valorQuinto;
+        }
+        if(valorSexto < 72){
+            valorSomado += valorSexto;
+        }
+
+        alert("Valor somado: " + valorSomado + "\nTodos os valores: " + valorPrimeiro + "," + valorSegundo + "," + valorTerceiro + "," + valorQuarto + "," + valorQuinto + "," + valorSexto);
+
+    </script>
+</body>
+</html>

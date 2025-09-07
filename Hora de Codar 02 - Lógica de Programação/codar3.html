@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Codar 3</title>
+</head>
+<body>
+    <script>
+
+        // 3. Faça um programa para ler 3 valores (considere que não serão informados valores iguais) e escrever o maior deles.
+        var valorUm = parseInt(prompt("Digite o 1° valor:"));
+        var valorDois = parseInt(prompt("Digite o 2° valor:"));
+        var valorTres = parseInt(prompt("Digite o 3° valor:"));
+ 
+        if(valorUm == valorDois || valorUm == valorTres || valorDois == valorTres){
+            alert("Insira números diferentes");
+        } else if (valorUm > valorDois && valorUm > valorTres ){
+            alert("O número " + valorUm + " é maior que o valor " + valorDois + " e maior que o valor " + valorTres);
+        }else if (valorDois > valorUm && valorDois > valorTres ){
+            alert("O número " + valorDois + " é maior que o valor " + valorUm + " e maior que o valor " + valorTres);
+        }else if (valorTres > valorUm && valorTres > valorDois ){
+            alert("O número " + valorTres + " é maior que o valor " + valorUm + " e maior que o valor " + valorDois);
+        } else{
+            alert("O valor digitado não é número!!!");
+        }
+
+    </script>
+    
+</body>
+</html>
