@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Codar 3</title>
+</head>
+<body>
+    <script>
+
+        // 3- Vamos criar uma lista de compras. 
+
+        // Crie uma array de frutas, exiba-a ao usuário e, em seguida, peça ao usuário para digitar o nome de uma das frutas.
+
+        // Caso a fruta esteja no array, remova-a e exiba a mensagem "Fruta foi retirada da lista". 
+
+        // Peça novamente para o usuário digitar o nome de uma fruta para ser removida. 
+
+        // Sempre que o usuário procurar por uma fruta que não está no array exiba a mensagem "Fruta indisponível no nosso mercado". 
+
+        // Quando o array não possuir mais itens dentro de si, escreva "Lista de compras finalizada".
+
+        var lista_de_frutas = ["Maça","Banana","Limão","Laranja","Maracujá"];
+
+        while(lista_de_frutas.length > 0){
+            
+            alert(`Lista de frutas: \n- ${lista_de_frutas.join("\n- ")}`);
+
+            var pedido_frutas = prompt("Digite uma fruta que deseja retirar: ");
+            var indice;
+
+            if(lista_de_frutas.includes(pedido_frutas)){
+                indice = lista_de_frutas.indexOf(pedido_frutas);
+                lista_de_frutas.splice(indice, 1);
+
+                alert("Fruta foi retirada da lista");
+            }else {
+                alert("Fruta indisponível no nosso mercado");
+            }
+        }
+
+        alert("Lista de compras finalizada");
+    </script>
+</body>
+</html>
