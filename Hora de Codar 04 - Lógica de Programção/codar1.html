@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Codar 1</title>
+</head>
+<body>
+    <table>
+        <thead>
+            <tr>
+                <th>Nome do Aluno</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody id="corpo_tabela_aluno">
+
+        </tbody>
+    </table>
+    <table>
+        <thead>
+            <tr>
+                <th>Quantidade de alunos</th>
+            </tr>
+        </thead>
+        <tbody id="corpo_tabela_qdd">
+            <tr>
+                <td></td>
+            </tr>
+        </tbody>
+    </table>
+    <script>
+
+        // 1- Crie um programa onde o usuário possa cadastrar estudantes sem limites, e, em seguida, Se o usuário digitar "PARE" o programa deve exibir a quantidade de estudantes cadastrados e a lista com cada um deles. 
+
+        
+        var alunos = [];
+        var confirmar = "";
+        var i = 0;
+        alert("Registrar Alunos\n\n Dicas:\n- Caso queira parar de registrar escreva PARE;\n- Caso queira continuar escreva SIM;");
+
+        while(true){
+            confirmar = prompt("Deseja registrar algum aluno: ");
+
+            if(confirmar == "PARE"){
+                
+                var tabelaAluno = "";
+                alunos.forEach(a =>{
+                    tabelaAluno += `<tr><td>${a}</td></tr>`
+                });
+
+                document.getElementById("corpo_tabela_aluno").innerHTML = tabelaAluno;
+
+                var tabelaQdd = alunos.length; 
+                document.getElementById("corpo_tabela_qdd").innerHTML = tabelaQdd;
+                
+                break;
+ 
+            }else if(confirmar == "SIM"){
+                alunos[i] = prompt("Digite o nome do aluno: ");
+                i++; 
+            }else{
+                alert("Confirme com os critérios exigidos");
+            }
+            
+        }
+    </script>
+</body>
+</html>
