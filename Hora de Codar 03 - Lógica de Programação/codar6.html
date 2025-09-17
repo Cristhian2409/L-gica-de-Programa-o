@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Codar 6</title>
+
+    <style>
+        body{
+            text-align: center;
+        }
+        td, th{
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Nome</th>
+                <th>Nota 1</th>
+                <th>Nota 2</th>
+                <th>Média</th>
+                <th>Situação</th>
+            </tr>
+        </thead>
+        <tbody id="corpo_tabela">
+            
+        </tbody>
+    </table>
+
+    <script>
+
+        // 6 - Escreva um programa para ler 2 notas de um aluno, calcular e imprimir a média final. Considere que a nota de aprovação é 9,5. Logo após escrever a mensagem "Calcular a média de outro aluno Sim/Não?" e solicitar um resposta. Se a resposta for "S", o programa deve ser executado novamente, caso contrário deve ser encerrado exibindo a quantidade de alunos aprovados.
+        
+        var nome;
+        var nota1;
+        var nota2;
+        var media = 0.0;
+        var resposta;
+        var alunos = [];
+        var situacao;
+        var nota_media = 7.0;
+
+        alert("Sistema de notas!"); 
+        inicio();
+        solicitar();
+        
+        function inicio(){
+            aluno = prompt("Digite o nome do aluno: ");
+            nota1 = parseFloat(prompt("Digite a 1* nota: "));
+            nota2 = parseFloat(prompt("Digite a 2* nota: "));
+            media = (nota1 + nota2) / 2;
+
+            if(media >= nota_media){
+                situacao = "Aprovado";
+            }else if(media <= nota_media){
+                situacao = "Reprovado";
+            }
+
+            alunos.push({aluno: aluno, nota1: nota1, nota2: nota2, media: media, situacao: situacao});
+            alert(`A média do aluno(a) ${aluno} foi ${media}.\nEle foi ${situacao}.`);
+        }
+
+        function solicitar(){
+            resposta = prompt("Calcular a média de outro aluno S/N?");
+            if(resposta == "S"){
+                inicio();
+                solicitar();
+            }else if(resposta == "N"){
+                var info = "";
+
+                alunos.forEach(a => {
+                    info += `<tr>
+                                <td>${a.aluno}</td>
+                                <td>${a.nota1}</td>
+                                <td>${a.nota2}</td>
+                                <td>${a.media}</td>
+                                <td>${a.situacao}</td>
+                            <tr>`;
+                });
+
+                document.getElementById("corpo_tabela").innerHTML = info;
+            }else{
+                alert("Escolha a partir do\nS - SIM\nN - NÃO");
+                solicitar();
+            }
+        }
+    </script>
+</body>
+</html>

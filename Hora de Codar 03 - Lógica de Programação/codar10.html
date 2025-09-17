@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Codar 10</title>
+</head>
+<body>
+    <script>
+
+        // 10 - Escreva um programa em que o usuário informe 10 valores e escreva quantos desses valores lidos estão entre os números 24 e 42 (incluindo os valores 24 e 42) e quantos deles estão fora deste intervalo.
+
+        var valores = [];
+        var fora_intervalo = 0;
+        var dentro_intervalo = 0;
+        
+        for(let i = 0; i <= 9; i++){
+            valores[i] = parseInt(prompt(`Digite o ${i+1}* valor: `));
+        }
+
+        for(let x = 0; x <= 9; x++){
+            if(valores[x] <= 24 || valores[x] >= 42){
+                fora_intervalo ++;
+            }else{
+                dentro_intervalo ++;
+            }
+        }
+
+        alert(`Entre os 10 valores informados são: \nDentro do intervalor: ${dentro_intervalo}\nFora do intervalo: ${fora_intervalo}`);
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Codar 5</title>
+</head>
+<body>
+    <script>
+
+        // 5 - Faça um algoritmo que calcule e escreva a média aritmética dos dois números inteiros informados pelo usuário e todos os números inteiros entre eles. Considere que o primeiro sempre será menor que o segundo.
+
+        alert("Cálculo de média aritmética entre o intervalo de dois números inteiros");
+
+        var inicio = parseInt(prompt("Digite o valor de início: "));
+        var final = parseInt(prompt("Digite o valor do final: "));
+        var soma = 0;
+        var media;
+        var n = 0;
+        
+        let i = inicio;
+        
+        while(i <= final){
+            soma += i;
+            n++;
+            i++;
+        }
+
+        media = soma/n;
+
+        alert(`A média aritmética do intervalo entre ${inicio} e ${final}, incluindo-os é: ${media}`);
+
+        
+    </script>
+</body>
+</html>

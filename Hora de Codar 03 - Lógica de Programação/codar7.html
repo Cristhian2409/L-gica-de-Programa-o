@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Codar 7</title>
+</head>
+<body>
+    <script>
+
+        // 7 - Escreva um algoritmo para ler as notas de avaliações de um aluno, calcule e imprima a média (simples) desse aluno. Só devem ser aceitos valores válidos durante a leitura (0 a 10) para cada nota. São 6 notas ao total.
+        // Caso o valor informado para qualquer uma das notas esteja fora do limite estabelecido, deve ser solicitado um novo valor ao usuário. 
+        
+        alert("Atividade 07\n\n\Notas que entre 0 e 10");
+
+        var nota1 = parseInt(prompt("Digite a 1* nota: "));
+
+        while(nota1 < 0 || nota1 > 10){
+            var nota1 = parseInt(prompt("Digite outra nota que atenda aos critérios exigidos: "));
+        }
+
+        var nota2 = parseInt(prompt("Digite a 2* nota: "));
+        while(nota2 < 0 || nota2 > 10){
+            var nota2 = parseInt(prompt("Digite outra nota que atenda aos critérios exigidos: "));
+        }
+        
+        var nota3 = parseInt(prompt("Digite a 3* nota: "));
+        while(nota3 < 0 || nota3 > 10){
+            var nota3 = parseInt(prompt("Digite outra nota que atenda aos critérios exigidos: "));
+        }
+        
+        var nota4 = parseInt(prompt("Digite a 4* nota: "));
+        while(nota4 < 0 || nota4 > 10){
+            var nota4 = parseInt(prompt("Digite outra nota que atenda aos critérios exigidos: "));
+
+        }
+        
+        var nota5 = parseInt(prompt("Digite a 5* nota: "));
+        while(nota5 < 0 || nota5 > 10){
+            var nota5 = parseInt(prompt("Digite outra nota que atenda aos critérios exigidos: "));
+        }
+
+        var nota6 = parseInt(prompt("Digite a 6* nota: "));
+        while(nota6 < 0 || nota6 > 10){
+            var nota6 = parseInt(prompt("Digite outra nota que atenda aos critérios exigidos: "));
+        }
+        
+        var media = (nota1 + nota2 + nota3 + nota4 + nota5 + nota6) / 6;
+        
+
+        alert("Notas Informadas \n\nNota 1: " + nota1 + "\nNota 2: " + nota2 + "\nNota 3: " + nota3 + "\nNota 4: " + nota4 + "\nNota 5: " + nota5+ "\nNota 6: " + nota6 + "\nMédia das notas: " + media.toFixed(1));
+    </script>
+</body>
+</html>

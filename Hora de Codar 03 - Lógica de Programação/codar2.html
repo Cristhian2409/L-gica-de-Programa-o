@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Codar 2</title>
+</head>
+<body>
+    <script>
+
+        // 2 - Escreva um algoritmo para ler 2 valores informados pelo usuário e enquanto o segundo valor informado for igual ou menor que ZERO, deve ser lido um novo valor, mas para a mesma variável. Ou seja, para o segundo valor não pode ser aceito o valor zero nem um valor negativo. 
+
+        // O seu programa deve imprimir o resultado da divisão do primeiro valor lido pelo segundo valor e exibir o resultado ao usuário.
+
+        var valor1 = parseInt(prompt("Informe o 1* valor: "));
+        var valor2 = parseInt(prompt("Informe o 2* valor: "));
+        
+        while(valor2 <= 0){
+            valor2 = parseInt(prompt("O 2* valor informado e igual ou menor que 0.\nInforme novamente outro valor: "));
+        }
+        
+
+        var divisão = valor1/valor2;
+
+        document.write("<p>O resultado da divisão é " + divisão + "</p>");
+        
+    </script>
+</body>
+</html>

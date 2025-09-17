@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>codar 4</title>
+</head>
+<body>
+    <script>
+
+        // 4 - Faça um algoritmo que calcule e escreva a média aritmética dos números inteiros entre 15 (inclusive) e 100 (inclusive).
+
+        var valor1 = parseInt(prompt("Informe o 1* valor: ")); 
+        
+        while((valor1 <= 14) || (valor1 >= 101)){
+            valor1 = parseInt(prompt("Informe novamente o 1* valor: "));
+        }
+        
+        var valor2 = parseInt(prompt("Informe o 2* valor: "));
+
+        while((valor2 <= 14) || (valor2 >= 101)){
+            valor2 = parseInt(prompt("Informe novamente o 2* valor: "));
+        }
+
+        var media = (valor1 + valor2) / 2;
+
+        document.write("<p>A média dos dois valores é " + media + "</p>");
+    </script>
+</body>
+</html>
