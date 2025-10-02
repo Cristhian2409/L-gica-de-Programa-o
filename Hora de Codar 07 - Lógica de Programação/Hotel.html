@@ -1,0 +1,229 @@
+<html>
+
+<head>
+
+	<script>
+
+		var nome_funcionario = "", senha;
+
+		var quartos = [
+			{quarto: 1, status: "Livre"},
+			{quarto: 2, status: "Livre"},
+			{quarto: 3, status: "Livre"},
+			{quarto: 4, status: "Livre"},
+			{quarto: 5, status: "Livre"},
+			{quarto: 6, status: "Livre"},
+			{quarto: 7, status: "Livre"},
+			{quarto: 8, status: "Livre"},
+			{quarto: 9, status: "Livre"},
+			{quarto: 10, status: "Livre"},
+			{quarto: 11, status: "Livre"},
+			{quarto: 12, status: "Livre"},
+			{quarto: 13, status: "Livre"},
+			{quarto: 14, status: "Livre"},
+			{quarto: 15, status: "Livre"},
+			{quarto: 16, status: "Livre"},
+			{quarto: 17, status: "Livre"},
+			{quarto: 18, status: "Livre"},
+			{quarto: 19, status: "Livre"},
+			{quarto: 20, status: "Livre"},
+		];
+
+		function inicio() {
+
+			var escolha = parseInt(prompt('Selecione uma opção 1.) Reserva de Quartos 2.) Cadastro de Hóspedes 3.) Abastecimento de Carros 4.) Sair'));
+
+			switch (escolha){
+				case 1:
+					reserva_quartos();
+					break;
+				case 2:
+					cadastro_hospedes();
+					break;
+				case 3:
+					abastecer_carros();
+					break;
+				case 4:
+					sair();
+					break;
+				default:
+					erro();
+					break;
+			}
+				
+		}		
+
+		function reserva_quartos() {
+			alert('HOTEL NAZARICK - RESERVA DE QUARTOS');
+
+			var valor_diaria; 
+			var qtdd_dias;
+			var total; 
+			var nome_hospede;
+			var numero_quarto;
+			var quarto;
+			var confirma_reserva;
+			
+			// Valor dos dias de hospedagem
+			valor_diaria = parseFloat(prompt("Digite o valor da Diária: "));
+
+			if(valor_diaria <= 0 || valor_diaria == ""){
+				alert("Valor inválido");
+				reserva_quartos();
+			}
+			
+			qtdd_dias = parseInt(prompt("Digite a quantidade de dias de hospedagem: \n\nOBS: Devem ser entre os dias 1 ao 30"));
+			
+			if(qtdd_dias <= 0 || qtdd_dias == "" || qtdd_dias > 30){
+				alert("Valor inválido");
+				reserva_quartos();
+			}
+
+			total = valor_diaria * qtdd_dias;
+			alert("O valor total da hospedagem: R$ " + total);
+
+
+			// Informações para o registro da reserva pra hospedagem;
+			nome_hospede = prompt("Digite o nome do hospede: ");
+
+			if(nome_hospede == ""){
+				alert("Valor inválido");
+				reserva_quartos();
+			}
+
+			while(true){
+				numero_quarto = parseInt(prompt("Qual quarto para a reserva (1-20)?"));
+
+				if(numero_quarto <= 0 || numero_quarto > 20 || numero_quarto == ""){
+					alert("O quarto deve ser entre 1 e 20!");
+					break;
+					reserva_quartos();
+				}else{
+					quarto = quartos.find(q => q.quarto === numero_quarto);
+
+					if(quarto.status === "Livre"){
+						alert(`O quarto ${numero_quarto} está ${quarto.status}`);
+						break;
+					}else{
+						alert(`O quarto ${numero_quarto} está ${quarto.status}`);
+						alert("Escolha outro quarto");
+					}
+				}
+			}
+
+			while(true){
+				confirma_reserva = prompt(`${nome_funcionario}, você confirma a hospedagem para ${nome_hospede} por ${qtdd_dias} dias para o quarto ${numero_quarto} por R$ ${total}? S/N`);
+
+				if(confirma_reserva === "S"){
+					alert(`${nome_funcionario}, reserva efetuada para ${nome_hospede}.`);
+					quarto.status = "Ocupado";
+					alert(`${quartos}`);
+					break;
+				}else if(confirma_reserva === "N"){
+					alert(`A reserva para ${nome_hospede} foi cancelada`);
+					break;
+				}else{
+					alert("A resposta de ser: \nS = Sim \nN = Não");
+				}
+			}
+			
+			inicio();
+		}
+
+		function cadastro_hospedes() {
+			alert('HOTEL NAZARICK - CADASTRO DE HÓSPEDES');
+
+			var hospedes = [];
+
+			var valor_diaria; 
+			var nome_hospede;
+			var idade_hospede;
+			var condicoes_pagamento;
+			var total_diaria;
+
+			valor_diaria = parseFloat(prompt("Digite o valor da Diária: "));
+
+			if(valor_diaria <= 0 || valor_diaria == ""){
+				alert("Valor inválido");
+				cadastro_hospedes();
+			}
+
+			while(true){
+
+				nome_hospede = prompt("Digite o nome do hospede: ");
+
+				if(nome_hospede == ""){
+					alert("Informe o nome do hospede!");
+					break;
+				}
+
+				idade_hospede = parseInt(prompt("Qual a idade do Hóspede?"));
+
+				if(idade_hospede < 6){
+					condicoes_pagamento = "gratuidade";
+				}else if(idade_hospede > 60){
+					condicoes_pagamento = "meia";
+				}else{
+					alert("Informe a idade do hospede!");
+					break;
+				}
+
+				var novo_hospede = {
+					nome: nome_hospede,
+					idade: idade_hospede,
+					status_pagamento: condicoes_pagamento,
+				}
+			}
+			
+			inicio();
+		}
+
+		function abastecer_carros() {
+			alert('HOTEL NAZARICK - ABASTECER');
+			inicio();
+		}
+
+		function erro() {
+			alert('Por favor, informe um número entre 1 e 4');
+			inicio();
+		}
+
+		function sair() {
+			var confirma = confirm('Você deseja sair?');
+			if (confirma) {
+				alert(`Muito obrigado e até logo, ${nome}.`);
+				window.close();
+			} else {
+				inicio();
+			}
+		}
+
+		function validar_senha(){
+			senha_autor = "2678";
+			senha = prompt("Digite a senha: ");
+
+			if(senha === senha_autor){
+				alert(`Bem-vindo ao Hotel Nazarick, ${nome_funcionario}. \n\nÉ um imenso prazer ter você por aqui!`);
+				inicio();
+			}else{
+				alert("Senha Incorreta!");
+				validar_senha();
+			}
+		}
+
+		
+		
+		alert("Sistema Hotel Nazarick.");
+
+		nome_funcionario = prompt("Qual é o seu nome?");
+
+		validar_senha();
+
+	</script>
+</head>
+
+<body>
+
+</body>
+
+</html>
